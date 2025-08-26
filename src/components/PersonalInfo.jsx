@@ -1,4 +1,4 @@
-function PersonalInfo({ data, setData}) {
+function PersonalInfo({data, setData}) {
     return (
         <div className="section">
             <h2>Personal Info</h2>
