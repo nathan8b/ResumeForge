@@ -48,14 +48,14 @@ function Education({data, setData}) {
                     />
                     <label for="start-date">Start Date:</label>
                     <input 
-                        type="month"
+                        type="date"
                         placeholder="Start date"
                         value={entry.startDate}
                         onChange={(event) => handleChange(index, "startDate", event.target.value)}
                     />
                     <label for="end-date">End Date:</label>
                     <input 
-                        type="month"
+                        type="date"
                         placeholder="End date"
                         value={entry.endDate}
                         onChange={(event) => handleChange(index, "endDate", event.target.value)}
