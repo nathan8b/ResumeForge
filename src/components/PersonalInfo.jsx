@@ -6,7 +6,7 @@ function PersonalInfo({data, setData}) {
             <label for="name">Full Name:</label>
             <input 
                 type="name"
-                placeholder="Name"
+                placeholder="Enter full name"
                 value={data.name}
                 onChange={(event) => setData({ ...data, name: event.target.value})}
             />
@@ -14,7 +14,7 @@ function PersonalInfo({data, setData}) {
             <label for="email">Email:</label>
             <input 
                 type="email"
-                placeholder="Email"
+                placeholder="Enter email"
                 value={data.email}
                 onChange={(event) => setData({ ...data, email: event.target.value})}
             />
@@ -22,7 +22,7 @@ function PersonalInfo({data, setData}) {
             <label for="phone">Phone Number:</label>
             <input 
                 type="tel"
-                placeholder="1001001000"
+                placeholder="Enter phone number"
                 value={data.phone}
                 onChange={(event) => setData({ ...data, phone: event.target.value})}
             />
@@ -30,7 +30,7 @@ function PersonalInfo({data, setData}) {
             <label for="state">Location:</label>
             <input 
                 type="text"
-                placeholder="Location"
+                placeholder="Enter location"
                 autoComplete="address-level1"
                 value={data.location}
                 onChange={(event) => setData({ ...data, location: event.target.value})}
