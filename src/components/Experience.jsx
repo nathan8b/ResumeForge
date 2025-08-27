@@ -6,7 +6,7 @@ function Experience({data, setData}) {
     }
 
     const addExperience = () => {
-        setData([...data, {company: "", position: "", startDate: "", EndDate: "", description: ""}]);
+        setData([...data, {company: "", location: "", position: "", startDate: "", EndDate: "", description: ""}]);
     }
 
     const removeExperience = (index) => {
@@ -31,6 +31,13 @@ function Experience({data, setData}) {
                         placeholder="Enter company name"
                         value={entry.company}
                         onChange={(event) => handleChange(index, "company", event.target.value)}
+                    />
+                    <label for="location">Location:</label>
+                    <input 
+                        type="text"
+                        placeholder="Ex: Athens, OH"
+                        value={entry.location}
+                        onChange={(event) => handleChange(index, "location", event.target.value)}
                     />
                     <label for="position">Job Title:</label>
                     <input 

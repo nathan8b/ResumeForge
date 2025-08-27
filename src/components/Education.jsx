@@ -6,7 +6,7 @@ function Education({data, setData}) {
     }
 
     const addEducation = () => {
-        setData([...data, {school: "", degree: "", startDate: "", endDate: "", gpa: ""}]);
+        setData([...data, {school: "", location: "", degree: "", startDate: "", endDate: "", gpa: ""}]);
     }
 
     const removeEducation = (index) => {
@@ -31,6 +31,13 @@ function Education({data, setData}) {
                         placeholder="Enter school name"
                         value={entry.school}
                         onChange={(event) => handleChange(index, "school", event.target.value)}
+                    />
+                    <label for="location">Location:</label>
+                    <input 
+                        type="text"
+                        placeholder="Ex: Athens, OH"
+                        value={entry.location}
+                        onChange={(event) => handleChange(index, "location", event.target.value)}
                     />
                     <label for="degree">Degree:</label>
                     <input 
