@@ -6,7 +6,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 
 function App() {
-  const [personalInfo, setPersonalInfo] = useState({ name: "", email: "", phone: "", location: ""});
+  const [personalInfo, setPersonalInfo] = useState({ name: "", email: "", phone: "", linkedin: "", github: ""});
   const [education, setEducation] = useState([{school: "", degree: "", startDate: "", endDate: "", gpa: ""}]);
   const [experience, setExperience] = useState([{company: "", position: "", startDate: "", EndDate: "", description: ""}]);
   const [projects, setProjects] = useState([{title: "", tools: "", startDate: "", endDate: "", link: "", description: ""}]);

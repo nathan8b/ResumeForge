@@ -11,6 +11,14 @@ function PersonalInfo({data, setData}) {
                 onChange={(event) => setData({ ...data, name: event.target.value})}
             />
 
+            <label for="phone">Phone Number:</label>
+                <input 
+                    type="tel"
+                    placeholder="Enter phone number"
+                    value={data.phone}
+                    onChange={(event) => setData({ ...data, phone: event.target.value})}
+            />
+
             <label for="email">Email:</label>
             <input 
                 type="email"
@@ -19,21 +27,20 @@ function PersonalInfo({data, setData}) {
                 onChange={(event) => setData({ ...data, email: event.target.value})}
             />
 
-            <label for="phone">Phone Number:</label>
-            <input 
-                type="tel"
-                placeholder="Enter phone number"
-                value={data.phone}
-                onChange={(event) => setData({ ...data, phone: event.target.value})}
-            />
-
-            <label for="state">Location:</label>
+            <label for="linkedin">LinkedIn Link:</label>
             <input 
                 type="text"
-                placeholder="Enter location"
-                autoComplete="address-level1"
-                value={data.location}
-                onChange={(event) => setData({ ...data, location: event.target.value})}
+                placeholder="Enter LinkedIn link"
+                value={data.linkedin}
+                onChange={(event) => setData({ ...data, linkedin: event.target.value})}
+            />
+
+            <label for="github">GitHub Link:</label>
+            <input 
+                type="text"
+                placeholder="Enter GitHub link"
+                value={data.github}
+                onChange={(event) => setData({ ...data, github: event.target.value})}
             />
         </div>
 
