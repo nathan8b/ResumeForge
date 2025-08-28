@@ -92,7 +92,7 @@ function App() {
       \resumeSubHeadingListStart
         ${education.map((entry) => String.raw`
           \resumeSubheading
-          {${entry.school}}{${entry.location}}}
+          {${entry.school}}{${entry.location}}
           {${entry.degree} \quad GPA: ${entry.gpa}}{${entry.startDate} -- ${entry.endDate}}
           `
         )}
@@ -102,8 +102,8 @@ function App() {
       \resumeSubHeadingListStart
         ${experience.map((entry) => String.raw`
           \resumeSubheading
-            {${entry.position}}{${entry.startDate} -- ${entry.endDate}}
-            {${entry.location}}{${entry.location}}
+            {${entry.company}}{${entry.startDate} -- ${entry.endDate}}
+            {${entry.position}}{${entry.location}}
             \resumeItemListStart
               \resumeItem{${entry.description}}
             \resumeItemListEnd
@@ -149,7 +149,7 @@ function App() {
       </div>
 
       <div className="preview-container">
-
+        <p style={{ whiteSpace: "pre-wrap"}}>{generateLatex()}/</p>
       </div>
     </>
   )
