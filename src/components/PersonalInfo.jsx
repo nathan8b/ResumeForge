@@ -3,7 +3,7 @@ function PersonalInfo({data, setData}) {
         <div className="section">
             <h2>Personal Info</h2>
 
-            <label for="name">Full Name:</label>
+            <label htmlFor="name">Full Name:</label>
             <input 
                 type="name"
                 placeholder="Enter full name..."
@@ -11,7 +11,7 @@ function PersonalInfo({data, setData}) {
                 onChange={(event) => setData({ ...data, name: event.target.value})}
             />
 
-            <label for="phone">Phone Number:</label>
+            <label htmlFor="phone">Phone Number:</label>
                 <input 
                     type="tel"
                     placeholder="Enter phone number..."
@@ -19,7 +19,7 @@ function PersonalInfo({data, setData}) {
                     onChange={(event) => setData({ ...data, phone: event.target.value})}
             />
 
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input 
                 type="email"
                 placeholder="Enter email..."
@@ -27,7 +27,7 @@ function PersonalInfo({data, setData}) {
                 onChange={(event) => setData({ ...data, email: event.target.value})}
             />
 
-            <label for="linkedin">LinkedIn Link:</label>
+            <label htmlFor="linkedin">LinkedIn Link:</label>
             <input 
                 type="text"
                 placeholder="Enter LinkedIn link..."
@@ -35,7 +35,7 @@ function PersonalInfo({data, setData}) {
                 onChange={(event) => setData({ ...data, linkedin: event.target.value})}
             />
 
-            <label for="github">GitHub Link:</label>
+            <label htmlFor="github">GitHub Link:</label>
             <input 
                 type="text"
                 placeholder="Enter GitHub link..."

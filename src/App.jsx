@@ -5,6 +5,7 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+// import CVPreview from './components/CVPreview';
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({ name: "", email: "", phone: "", linkedin: "", github: ""});
@@ -12,8 +13,10 @@ function App() {
   const [experience, setExperience] = useState([{company: "", location: "", position: "", startDate: "", EndDate: "", description: ""}]);
   const [projects, setProjects] = useState([{title: "", tools: "", startDate: "", endDate: "", link: "", description: ""}]);
   const [skills, setSkills] = useState({languages: "", frameworks: "", tools: ""});
+  const [latexCode, setLatexCode] = useState("");
 
-  const generateLatex = () => String.raw`
+  const generateLatex = () => {
+    return String.raw`
     \documentclass[letterpaper,11pt]{article}
 
     \usepackage{latexsym}
@@ -136,7 +139,8 @@ function App() {
           }
         \end{itemize}
     \end{document}
-    `
+    `;
+  } 
 
   return (
     <>
@@ -149,7 +153,7 @@ function App() {
       </div>
 
       <div className="preview-container">
-        <p style={{ whiteSpace: "pre-wrap"}}>{generateLatex()}/</p>
+        
       </div>
     </>
   )

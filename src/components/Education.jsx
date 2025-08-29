@@ -25,42 +25,42 @@ function Education({data, setData}) {
                         <button className="delete-button" onClick={() => removeEducation(index)}>Delete</button>
                     </div>
                     
-                    <label for="school">School:</label>
+                    <label htmlFor="school">School:</label>
                     <input 
                         type="text"
                         placeholder="Enter school name..."
                         value={entry.school}
                         onChange={(event) => handleChange(index, "school", event.target.value)}
                     />
-                    <label for="location">Location:</label>
+                    <label htmlFor="location">Location:</label>
                     <input 
                         type="text"
                         placeholder="Ex: Athens, OH..."
                         value={entry.location}
                         onChange={(event) => handleChange(index, "location", event.target.value)}
                     />
-                    <label for="degree">Degree:</label>
+                    <label htmlFor="degree">Degree:</label>
                     <input 
                         type="text"
                         placeholder="Enter degree..."
                         value={entry.degree}
                         onChange={(event) => handleChange(index, "degree", event.target.value)}
                     />
-                    <label for="gpa">GPA:</label>
+                    <label htmlFor="gpa">GPA:</label>
                     <input 
                         type="number"
                         placeholder="Enter GPA..."
                         value={entry.gpa}
                         onChange={(event) => handleChange(index, "gpa", event.target.value)}
                     />
-                    <label for="start-date">Start Date:</label>
+                    <label htmlFor="start-date">Start Date:</label>
                     <input 
                         type="text"
                         placeholder="Ex: Aug. 2025, June 2026..."
                         value={entry.startDate}
                         onChange={(event) => handleChange(index, "startDate", event.target.value)}
                     />
-                    <label for="end-date">End Date:</label>
+                    <label htmlFor="end-date">End Date:</label>
                     <input 
                         type="text"
                         placeholder="Ex: Aug. 2025, June 2026, Present..."

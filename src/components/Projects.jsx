@@ -25,42 +25,42 @@ function Projects({data, setData}) {
                         <button className="delete-button" onClick={() => removeProject(index)}>Delete</button>
                     </div>
                     
-                    <label for="title">Project Title:</label>
+                    <label htmlFor="title">Project Title:</label>
                     <input 
                         type="text"
                         placeholder="Enter project title..."
                         value={entry.title}
                         onChange={(event) => handleChange(index, "title", event.target.value)}
                     />
-                    <label for="tools">Tools:</label>
+                    <label htmlFor="tools">Tools:</label>
                     <input 
                         type="text"
                         placeholder="Ex: JavaScript, React, CSS..."
                         value={entry.tools}
                         onChange={(event) => handleChange(index, "tools", event.target.value)}
                     />
-                    <label for="start-date">Start Date:</label>
+                    <label htmlFor="start-date">Start Date:</label>
                     <input 
                         type="text"
                         placeholder="Ex: Aug. 2025, June 2026..."
                         value={entry.startDate}
                         onChange={(event) => handleChange(index, "startDate", event.target.value)}
                     />
-                    <label for="end-date">End Date:</label>
+                    <label htmlFor="end-date">End Date:</label>
                     <input 
                         type="text"
                         placeholder="Ex: Aug. 2025, June 2026, Present..."
                         value={entry.endDate}
                         onChange={(event) => handleChange(index, "endDate", event.target.value)}
                     />
-                    <label for="description">Description:</label>
+                    <label htmlFor="description">Description:</label>
                     <textarea
                         rows={6}
                         placeholder="Enter a description..."
                         value={entry.description}
                         onChange={(event) => handleChange(index, "description", event.target.value)}
                     />
-                    <label for="link">Link (optional):</label>
+                    <label htmlFor="link">Link (optional):</label>
                     <input 
                         type="link"
                         placeholder="Enter GitHub or live project link..."
