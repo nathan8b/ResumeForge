@@ -5,15 +5,15 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-// import CVPreview from './components/CVPreview';
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({ name: "", email: "", phone: "", linkedin: "", github: ""});
   const [education, setEducation] = useState([{school: "", location: "", degree: "", startDate: "", endDate: "", gpa: ""}]);
-  const [experience, setExperience] = useState([{company: "", location: "", position: "", startDate: "", EndDate: "", description: ""}]);
+  const [experience, setExperience] = useState([{company: "", location: "", position: "", startDate: "", endDate: "", description: ""}]);
   const [projects, setProjects] = useState([{title: "", tools: "", startDate: "", endDate: "", link: "", description: ""}]);
   const [skills, setSkills] = useState({languages: "", frameworks: "", tools: ""});
   const [latexCode, setLatexCode] = useState("");
+  const [pdfUrl, setPdfUrl] = useState("");
 
   const generateLatex = () => {
     return String.raw`
@@ -142,8 +142,36 @@ function App() {
     `;
   } 
 
+  const handleGenerate = async () => {
+    const latex = generateLatex();
+    setLatexCode(latex);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/latex/compile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ latex })
+      });
+
+      if(!response.ok){
+        const error = await response.json();
+        console.error(error);
+        return alert("Failed to compile LaTeX: ", error.error);
+      }
+
+      const blob = await response.blob()
+      const url = URL.createObjectURL(blob);
+      setPdfUrl(url);
+
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+    }
+  }
+
   return (
-    <>
+    <div className="app-container">
       <div className="inputs-container">
         <PersonalInfo data={personalInfo} setData={setPersonalInfo} />
         <Education data={education} setData={setEducation} />
@@ -153,9 +181,13 @@ function App() {
       </div>
 
       <div className="preview-container">
-        
+        <button onClick={handleGenerate}>Generate</button>
+
+        {pdfUrl && (
+          <iframe src={pdfUrl} title="PDF Viewer"></iframe>
+        )}
       </div>
-    </>
+    </div>
   )
 }
 
