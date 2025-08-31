@@ -22,7 +22,9 @@ function Education({data, setData}) {
 
                     <div className="entry-header">
                         <h3 className="sub-title">School #{index+1}</h3>
-                        <button className="delete-button" onClick={() => removeEducation(index)}>Delete</button>
+                        {data.length > 1 && (
+                            <button className="delete-button" onClick={() => removeEducation(index)}>Delete</button>
+                        )}
                     </div>
                     
                     <label htmlFor="school">School:</label>

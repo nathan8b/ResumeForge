@@ -22,7 +22,9 @@ function Experience({data, setData}) {
 
                     <div className="entry-header">
                         <h3 className="sub-title">Experience #{index+1}</h3>
-                        <button className="delete-button" onClick={() => removeExperience(index)}>Delete</button>
+                        {data.length > 1 && (
+                            <button className="delete-button" onClick={() => removeExperience(index)}>Delete</button>
+                        )}                    
                     </div>
                     
                     <label htmlFor="company">Company:</label>

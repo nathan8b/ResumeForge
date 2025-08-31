@@ -22,7 +22,9 @@ function Projects({data, setData}) {
 
                     <div className="entry-header">
                         <h3 className="sub-title">Project #{index+1}</h3>
-                        <button className="delete-button" onClick={() => removeProject(index)}>Delete</button>
+                        {data.length > 1 && (
+                            <button className="delete-button" onClick={() => removeProject(index)}>Delete</button>
+                        )}
                     </div>
                     
                     <label htmlFor="title">Project Title:</label>
