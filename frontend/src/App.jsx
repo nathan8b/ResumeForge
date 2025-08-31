@@ -108,7 +108,12 @@ function App() {
             {${entry.company}}{${entry.startDate} -- ${entry.endDate}}
             {${entry.position}}{${entry.location}}
             \resumeItemListStart
-              \resumeItem{${entry.description}}
+              ${entry.description
+                  .split("\n")
+                  .filter(line => line.trim() !== "")
+                  .map(line => `\\resumeItem{${line.trim()}}`)
+                  .join("\n")
+              }
             \resumeItemListEnd
           `
         )}
@@ -120,10 +125,17 @@ function App() {
           \resumeProjectHeading
             {\textbf{${entry.title}} $|$ \emph{${entry.tools}}}{${entry.startDate} -- ${entry.endDate}}
             \resumeItemListStart
-              \resumeItem{${entry.description}}
+              ${entry.description
+                  .split("\n")
+                  .filter(line => line.trim() !== "")
+                  .map(line => `\\resumeItem{${line.trim()}}`)
+                  .join("\n")
+              }
             \resumeItemListEnd
-            \vspace{-4pt}
-            \href{${entry.link}}{\underline}
+            ${entry.link !== ""
+              ? `\\vspace{-4pt}
+                \\href{${entry.link}}{\\underline{${entry.link}}}`
+            : ""}
           `
         )}
       \resumeSubHeadingListEnd

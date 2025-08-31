@@ -65,7 +65,7 @@ function Experience({data, setData}) {
                     <label htmlFor="description">Description:</label>
                     <textarea
                         rows={6}
-                        placeholder="Enter a description..."
+                        placeholder="Enter bullet points (one bullet per line)..."
                         value={entry.description}
                         onChange={(event) => handleChange(index, "description", event.target.value)}
                     />
