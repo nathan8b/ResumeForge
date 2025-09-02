@@ -21,12 +21,12 @@ body {
 }
 
 .inputs-container {
-  width: clamp(300px, 40%, 400px);
+  width: clamp(300px, 30%, 40%);
   margin: 20px;
 }
 
 .preview-container {
-  width: clamp(300px, 80%, 800px);
+  width: clamp(300px, 50%, 50%);
   margin: 20px;
   display: flex;
   flex-direction: column;

@@ -61,7 +61,7 @@ function Education({data, setData}) {
                                 value={entry.degree}
                                 onChange={(event) => handleChange(index, "degree", event.target.value)}
                             />
-                            <label htmlFor="gpa">GPA:</label>
+                            <label htmlFor="gpa">GPA (optional):</label>
                             <input 
                                 type="number"
                                 placeholder="Enter GPA..."
