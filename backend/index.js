@@ -12,7 +12,7 @@ app.use(express.json());
 // CORS setup
 const allowedOrigins = [
   "http://localhost:5173",           // Vite dev
-  "https://refinedresume.netlify.app/" // Netlify frontend
+  "https://cv-app-o0sh.onrender.com" // Render frontend
 ];
 
 app.use(
