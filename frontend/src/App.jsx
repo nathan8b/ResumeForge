@@ -175,7 +175,7 @@ ${projects
     setLatexCode(latex);
 
     try {
-      const response = await fetch("http://localhost:5000/api/latex/compile", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/latex/compile`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
