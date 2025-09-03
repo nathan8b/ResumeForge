@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import latexRoutes from "./routes/latex.js";
+console.log("latexRoutes in index:", latexRoutes);
 
 const app = express();
 
