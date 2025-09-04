@@ -31,6 +31,7 @@ export default function PdfViewer({ pdfUrl }) {
     if(!pdfUrl) {
         return (
             <div className="loading-container">
+                <p className="check-mark">✔</p>
                 <p>Click Generate to view your resume!</p>
             </div>
         )

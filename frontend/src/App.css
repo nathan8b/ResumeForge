@@ -136,6 +136,11 @@ textarea {
   font-family: sans-serif;
 }
 
+.check-mark {
+  margin: 0;
+  font-size: 40px;
+}
+
 .spinner {
   width: 40px;
   height: 40px;
