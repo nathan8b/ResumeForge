@@ -34,7 +34,7 @@ body {
 
 iframe {
   width: 100%;
-  height: 1090px;
+  height: 68vw;
   border: none;
   border-radius: 8px;
   box-shadow: -8px 8px 20px rgba(106, 106, 106, 0.5);
@@ -123,4 +123,31 @@ textarea {
   border: 0;
   border-radius: 8px;
   resize: none;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: #4a4a4a;
+  font-family: sans-serif;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #d1d1d1;
+  border-top: 4px solid #505050;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

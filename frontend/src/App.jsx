@@ -5,6 +5,7 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import PdfViewer from './components/PdfViewer';
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({ name: "", email: "", phone: "", linkedin: "", github: ""});
@@ -211,9 +212,7 @@ ${projects
       <div className="preview-container">
         <button onClick={handleGenerate}>Generate</button>
 
-        {pdfUrl && (
-          <iframe src={pdfUrl} title="PDF Viewer"></iframe>
-        )}
+        <PdfViewer pdfUrl={pdfUrl} />
       </div>
     </div>
   )
