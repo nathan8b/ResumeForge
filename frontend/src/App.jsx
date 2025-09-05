@@ -143,13 +143,13 @@ ${projects
   {\textbf{${escapeLatex(entry.title)}} $|$ \emph{${escapeLatex(entry.tools)}}}{${escapeLatex(entry.startDate)} -- ${escapeLatex(entry.endDate)}}`;
 
     const projectDescription = entry.description && entry.description.trim() !== ''
-      ? String.raw`\\resumeItemListStart
+      ? String.raw`\resumeItemListStart
       ${entry.description
         .split('\n')
         .filter((line) => line.trim() !== '')
         .map((line) => `\\resumeItem{${escapeLatex(line.trim())}}`)
         .join('\n')}
-    \\resumeItemListEnd
+    \resumeItemListEnd
     ${entry.link && entry.link.trim() !== '' ? `\\vspace{-4pt}\n  \\href{${escapeLatex(entry.link)}}{\\underline{${escapeLatex(entry.link)}}}` : ''}`
       : '';
 
