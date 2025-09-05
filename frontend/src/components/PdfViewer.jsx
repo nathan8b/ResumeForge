@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function PdfViewer({ pdfUrl }) {
+function PdfViewer({ pdfUrl }) {
     const [backendReady, setBackendReady] = useState(false);
 
     useEffect(() => {
@@ -41,3 +41,5 @@ export default function PdfViewer({ pdfUrl }) {
         <iframe src={pdfUrl} title="PDF Viewer"></iframe>
     )
 }
+
+export default PdfViewer;

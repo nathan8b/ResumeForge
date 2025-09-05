@@ -60,5 +60,19 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
+// route to serve generated latex source
+app.get("/api/latex/source", (req, res) => {
+  const texPath = path.join(process.cwd(), "tmp", "document.tex");
+
+  if (!fs.existsSync(texPath)) {
+    res.status(404).send("No LaTeX source found");
+    return;
+  }
+
+  res.setHeader("Content-Type", "application/x-tex; charset=utf-8");
+  res.setHeader("Content-Disposition", "attachment; filename=resume.tex");
+  res.sendFile(texPath);
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Backend running on ${PORT}`));
