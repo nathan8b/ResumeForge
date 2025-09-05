@@ -1,12 +1,55 @@
-# React + Vite
+# 🔥 Resume Forge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A full-stack web app to generate resumes from LaTeX, preview them instantly, and export as PDF or open in Overleaf
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61dafb?style=flat-square)
+![Node](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green?style=flat-square)
+![LaTeX](https://img.shields.io/badge/Typesetting-LaTeX-orange?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🖋️ Type your info into the inputs  
+- ⚡ Compile LaTeX into a polished resume instantly  
+- 📄 Download resumes as **PDFs**, or open in Overleaf for more freedom 
+- 🌐 Deployable to free hosting platforms (Render, Vercel, etc.)  
+
+---
+
+## 🚀 Quick Start (local)
+
+### Prerequisites
+- **Node.js** (v18+ recommended)  
+- **LaTeX toolchain** (`pdflatex`)  
+- **Poppler utils** (`pdftoppm`) for PDF → image conversion  
+
+On Debian/Ubuntu:
+```bash
+sudo apt-get install texlive-latex-base texlive-latex-extra texlive-fonts-recommended poppler-utils
+
+# Backend Setup
+cd backend
+npm install
+
+# Frontend Setup
+cd frontend
+npm install
+
+# In root directory
+npm run dev
+```
+
+## 🔧 Configuration
+Frontend expects an .env file:
+
+```bash
+VITE_API_URL=http://localhost:5000
+```
+
+## 📜 License
+MIT License © 2025 Nathan B.
+
+🔥 Built with React, Express, and LaTeX — resumes forged in fire.
+
