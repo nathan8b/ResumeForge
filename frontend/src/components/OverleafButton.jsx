@@ -12,7 +12,7 @@ function OverleafButton() {
   };
 
   return (
-    <button onClick={handleOpen} className="px-4 py-2 bg-green-600 text-white rounded">
+    <button onClick={handleOpen} className="overleaf-button">
       Open in Overleaf
     </button>
   );
