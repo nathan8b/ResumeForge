@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css';
-import PersonalInfo from './components/PersonalInfo';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import PdfViewer from './components/PdfViewer';
-import OverleafButton from './components/OverleafButton';
+import PersonalInfo from './components/input-sections/PersonalInfo';
+import Education from './components/input-sections/Education';
+import Experience from './components/input-sections/Experience';
+import Projects from './components/input-sections/Projects';
+import Skills from './components/input-sections/Skills';
+import PdfViewer from './components/preview-section/PdfViewer';
+import OverleafButton from './components/preview-section/OverleafButton';
+import Header from './components/header/Header';
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({ name: "", email: "", phone: "", linkedin: "", github: ""});
@@ -201,22 +202,28 @@ ${projects
   }
 
   return (
-    <div className="app-container">
-      <div className="inputs-container">
-        <PersonalInfo data={personalInfo} setData={setPersonalInfo} />
-        <Education data={education} setData={setEducation} />
-        <Experience data={experience} setData={setExperience} />
-        <Projects data={projects} setData={setProjects}/>
-        <Skills data={skills} setData={setSkills}/>
-      </div>
+    <>
+      <Header/>
+      <div className="app-container">
+        <div className="inputs-container">
+          <PersonalInfo data={personalInfo} setData={setPersonalInfo} />
+          <Education data={education} setData={setEducation} />
+          <Experience data={experience} setData={setExperience} />
+          <Projects data={projects} setData={setProjects}/>
+          <Skills data={skills} setData={setSkills}/>
+        </div>
 
-      <div className="preview-container">
-        <button onClick={handleGenerate}>Generate</button>
-        <OverleafButton/>
-
-        <PdfViewer pdfUrl={pdfUrl} />
+        <div className="preview-container">
+          <div className="buttons-container">
+            <button className="generate-button" onClick={handleGenerate}>Generate</button>
+            <OverleafButton/>
+          </div>
+          
+          <PdfViewer pdfUrl={pdfUrl} />
+        </div>
       </div>
-    </div>
+    </>
+
   )
 }
 
