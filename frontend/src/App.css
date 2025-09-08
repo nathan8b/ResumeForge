@@ -2,16 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
 body {
-  background-color: rgb(31, 31, 31);
+  background-color:rgb(29, 29, 29);
   color: white;
-  height: 100%;
+  min-height: 100vh;
   overflow-y: auto;
   margin: 0;
 }
 
 #root {
-  overflow-y: auto;
-  height: 100%;
+  min-height: 100%;
   margin: 0 auto;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -95,7 +94,7 @@ body {
 iframe {
   width: 100%;
   max-width: 900px;
-  aspect-ratio: 8/11;
+  aspect-ratio: 8/10.2;
   border: none;
   border-radius: 8px;
   box-shadow: -8px 8px 20px rgba(2, 2, 2, 0.5);
@@ -158,15 +157,23 @@ button:hover {
 }
 
 .generate-button {
-  background-color: #ffa600;
+  font-weight: bold;
+  background: linear-gradient(90deg, #eadc43, #ff9900);
+}
+
+.generate-button:hover {
   box-shadow: 0px 0px 20px rgb(255, 153, 0);
 }
 
 .overleaf-button {
-  background-color: rgb(65, 179, 55);
-  box-shadow: 0px 0px 15px #2cff20;
+  font-weight: bold;
+  background: linear-gradient(90deg, #99f27d, #0fb300);
   width: auto;
   min-width: 32px;
+}
+
+.overleaf-button:hover {
+  box-shadow: 0px 0px 15px #2cff20;
 }
 
 .preview-container button {
@@ -179,8 +186,13 @@ button:hover {
   color: rgb(107, 107, 107);
 }
 
-h2, h3 {
+h3 {
   margin: 0;
+}
+
+h2{
+  margin: 0;
+  text-shadow: 0 0 4px #f7f385, 0 0 15px #ff6403;
 }
 
 label {

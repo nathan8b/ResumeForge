@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function PersonalInfo({data, setData}) {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
         <div className="section">
