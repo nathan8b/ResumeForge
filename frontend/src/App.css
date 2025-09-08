@@ -184,6 +184,7 @@ button:hover {
 
 .preview-container p {
   color: rgb(107, 107, 107);
+  margin: 0;
 }
 
 h3 {

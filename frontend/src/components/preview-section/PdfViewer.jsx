@@ -24,6 +24,7 @@ function PdfViewer({ pdfUrl }) {
             <div className="loading-container">
                 <div className="spinner"></div>
                 <p>Waking up server...</p>
+                <p>(may take up to a minute)</p>
             </div>
         )
     }
