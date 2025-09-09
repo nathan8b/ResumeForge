@@ -10,20 +10,9 @@ const app = express();
 app.use(express.json());
 
 // CORS setup
-const allowedOrigins = [
-  "http://localhost:5173",           // Vite dev
-  "https://cv-app-o0sh.onrender.com" // Render frontend
-];
-
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: "*", // allow any frontend
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   })
