@@ -12,8 +12,7 @@ app.use(express.json());
 // CORS setup
 const allowedOrigins = [
   "http://localhost:5173",           // Vite dev
-  "https://cv-app-o0sh.onrender.com", // Render test frontend
-  "https://latex-resume-forge.netlify.app/" //netlify frontend
+  "https://latex-resume-forge.netlify.app" // netlify frontend
 ];
 
 app.use(
