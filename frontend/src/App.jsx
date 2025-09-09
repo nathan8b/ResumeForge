@@ -178,26 +178,45 @@ ${projects
     setLatexCode(latex);
 
     try {
+    // wake backend first
+      let awake = false;
+      while (!awake) {
+        try {
+          const healthRes = await fetch(`${import.meta.env.VITE_API_URL}/api/health`);
+          if (healthRes.ok) {
+            awake = true;
+          } else {
+            console.log("Backend still waking up...");
+            await new Promise(r => setTimeout(r, 3000)); // wait 3s before retry
+          }
+        } catch {
+          console.log("Backend unreachable, retrying...");
+          await new Promise(r => setTimeout(r, 3000));
+        }
+      }
+
+      // once backend awake compile LaTeX
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/latex/compile`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ latex })
+        body: JSON.stringify({ latex }),
       });
 
-      if(!response.ok){
+      if (!response.ok) {
         const error = await response.json();
         console.error(error);
-        return alert("Failed to compile LaTeX: ", error.error);
+        return alert("Failed to compile LaTeX: " + error.error);
       }
 
-      const blob = await response.blob()
+      const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       setPdfUrl(url);
 
     } catch (error) {
       console.error("Error generating PDF:", error);
+      alert("Something went wrong while generating your PDF.");
     }
   }
 
@@ -223,7 +242,6 @@ ${projects
         </div>
       </div>
     </>
-
   )
 }
 
