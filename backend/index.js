@@ -74,5 +74,11 @@ app.get("/api/latex/source", (req, res) => {
   res.sendFile(texPath);
 });
 
+// root "health" route
+app.get("/", (req, res) => {
+  res.send("ResumeForge backend is live");
+});
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Backend running on ${PORT}`));
