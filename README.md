@@ -1,10 +1,10 @@
 # 🔥 Resume Forge
+Live Link: https://latex-resume-forge.netlify.app/ 
 
 > A full-stack web app to generate resumes from LaTeX, preview them instantly, and export as PDF or open in Overleaf
 
 ![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61dafb?style=flat-square)
 ![Node](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green?style=flat-square)
-![LaTeX](https://img.shields.io/badge/Typesetting-LaTeX-orange?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
 ---
