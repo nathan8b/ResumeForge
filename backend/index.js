@@ -69,8 +69,8 @@ app.get("/api/latex/source", (req, res) => {
     return;
   }
 
-  res.setHeader("Content-Type", "application/x-tex; charset=utf-8");
-  res.setHeader("Content-Disposition", "attachment; filename=resume.tex");
+  res.setHeader("Content-Type", "text/plain; charset=utf-8");
+  res.setHeader("Content-Disposition", "inline; filename=resume.tex");
   res.sendFile(texPath);
 });
 
