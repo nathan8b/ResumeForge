@@ -235,7 +235,7 @@ ${projects
         <div className="preview-container">
           <div className="buttons-container">
             <button className="generate-button" onClick={handleGenerate}>Generate</button>
-            <OverleafButton/>
+            <OverleafButton latexCode={latexCode}/>
           </div>
           
           <PdfViewer pdfUrl={pdfUrl} />

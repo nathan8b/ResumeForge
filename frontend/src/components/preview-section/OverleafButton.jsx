@@ -1,14 +1,38 @@
-function OverleafButton() {
-    
+function OverleafButton({ latexCode }) {
+
   const handleOpen = () => {
-    // Backend .tex source file URL
-    const texUrl = `${import.meta.env.VITE_API_URL}/api/latex/source`;
+    if (!latexCode) {
+      alert("Please generate your resume first!");
+      return;
+    }
 
-    // Encode and build Overleaf project creation link
-    const overleafUrl = `https://www.overleaf.com/docs?snip_uri=${encodeURIComponent(texUrl)}`;
+    // Submit LaTeX directly to Overleaf via form POST using encoded_snip.
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "https://www.overleaf.com/docs";
+    form.target = "_blank";
 
-    // Open in a new tab
-    window.open(overleafUrl, "_blank");
+    const snipInput = document.createElement("input");
+    snipInput.type = "hidden";
+    snipInput.name = "encoded_snip";
+    snipInput.value = encodeURIComponent(latexCode);
+    form.appendChild(snipInput);
+
+    const nameInput = document.createElement("input");
+    nameInput.type = "hidden";
+    nameInput.name = "snip_name";
+    nameInput.value = "resume.tex";
+    form.appendChild(nameInput);
+
+    const engineInput = document.createElement("input");
+    engineInput.type = "hidden";
+    engineInput.name = "engine";
+    engineInput.value = "pdflatex";
+    form.appendChild(engineInput);
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
   };
 
   return (
